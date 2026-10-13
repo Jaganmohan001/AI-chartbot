@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131a">
+  <title>My AI Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">✦</div>
+        <div>
+          <h1>My AI Chatbot</h1>
+          <p><span class="status-dot"></span> Python server · Ollama qwen2.5:3b</p>
+        </div>
+      </div>
+      <button class="new-chat-button" id="clear-chat" type="button" title="Start a new chat">
+        <span aria-hidden="true">＋</span> <span class="button-label">New chat</span>
+      </button>
+    </header>
+
+    <section class="chat" id="chat" aria-label="Chat messages" aria-live="polite">
+      <div class="welcome" id="welcome">
+        <div class="welcome-icon" aria-hidden="true">✦</div>
+        <h2>Good to see you.</h2>
+        <p>What would you like to talk about?</p>
+        <div class="suggestions" aria-label="Example messages">
+          <button type="button" class="suggestion">What can you help me with?</button>
+          <button type="button" class="suggestion">Tell me something interesting</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="composer-wrap">
+      <form class="composer" id="chat-form">
+        <label class="sr-only" for="message-input">Your message</label>
+        <textarea
+          id="message-input"
+          name="message"
+          placeholder="Message My AI Chatbot..."
+          rows="1"
+          maxlength="4000"
+          required
+        ></textarea>
+        <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 19V5m-7 7 7-7 7 7" />
+          </svg>
+        </button>
+      </form>
+      <p class="disclaimer">Your messages are sent to your local Ollama model through the Python server.</p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
